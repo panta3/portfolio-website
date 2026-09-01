@@ -136,7 +136,8 @@ export const experience: Experience[] = [
     location: "Delhi, India (Remote)",
     period: "Jul – Sept 2023",
     bullets: [
-      "Worked in Zenit Excelencia's IT department, using Python and Pandas to tackle data-processing challenges",
+      "Merged and managed extensive Excel datasets using Python and Pandas, streamlining the organization's data-driven decision-making",
+      "Built import/export mechanisms for courses on Zenit Excelencia's online platform, improving usability and page performance",
     ],
   },
 ];
