@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Aarav Pant — Portfolio
 
-## Getting Started
+Personal portfolio site — career summary, experience, and the three
+shipped projects (Cloud Security Posture Scanner, Security RAG
+Assistant, Job Application Tracker), pulled from the resume so there's
+one source of truth for the content, not three copies to keep in sync.
 
-First, run the development server:
+**Status:** ✅ built locally, not yet deployed.
 
+---
+
+## 🎨 Design
+Dark, single-committed theme rather than a light/dark toggle — a
+"futuristic" personal-brand identity, not a utility app. One accent
+color (cyan) carries all the boldness; everything else stays quiet.
+
+- **Type** — [Chakra Petch](https://fonts.google.com/specimen/Chakra+Petch)
+  for display headings (angular, technical, distinct from the generic
+  Inter/Space Grotesk look), [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans)
+  for body copy, [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
+  for labels/data — the same family used in the accompanying interview-prep
+  PDF, for a consistent personal brand across documents.
+- **3D background** — a Three.js constellation/particle field in the
+  hero, rotating slowly, reacting to mouse position, and fading out as
+  the viewer scrolls past the hero instead of persisting behind dense
+  text lower on the page.
+- **Scroll reveals** — sections and cards fade/slide into view via
+  `IntersectionObserver`, not an animation library.
+
+## 🧱 Stack
+- Next.js (App Router) + TypeScript
+- Tailwind CSS v4
+- Three.js (hero background)
+- react-icons (skill logos — Simple Icons + Font Awesome, with a
+  Tabler-icon fallback for the handful of skills without a real brand
+  mark, e.g. C#, CI/CD)
+
+## ✅ Sections
+- [x] 🏠 Hero — name, role, tagline, CTAs
+- [x] 📝 About — career summary + certification progress
+- [x] 💼 Experience — full timeline, including two roles not on the
+      1-page resume (space-constrained there; the site has room)
+- [x] 🗂️ Projects — all 3 shipped projects, GitHub + live demo links
+- [x] 🛠️ Skills — grouped, icon-labeled, pulled straight from the resume
+- [x] 📬 Contact — email / LinkedIn / GitHub
+
+## 🚫 Explicitly out of scope for v1
+- Mobile nav menu (nav links hide below `sm:`; the page is short enough
+  that scrolling covers it)
+- Blog / long-form writing section
+- CMS-backed content — data lives in `src/data/resume.ts`, edited directly
+
+## 🚀 Setup
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Content lives in `src/data/resume.ts` (experience, projects, skills) and
+`src/data/skillIcons.tsx` (skill → icon mapping) — edit those rather than
+the components to update what's shown.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📌 Status
+Built and visually verified locally (desktop + mobile viewports). Not
+yet deployed — Vercel is the natural target given the stack. See `TODO.md`.
