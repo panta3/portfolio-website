@@ -2,13 +2,15 @@ export default function SectionHeading({
   eyebrow,
   title,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
 }) {
   return (
     <div>
-      <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">{eyebrow}</p>
-      <h2 className="mt-3 font-display font-semibold text-3xl sm:text-4xl text-ink">
+      {eyebrow && (
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">{eyebrow}</p>
+      )}
+      <h2 className={`${eyebrow ? "mt-3" : ""} font-display font-semibold text-3xl sm:text-4xl text-ink`}>
         {title}
       </h2>
     </div>

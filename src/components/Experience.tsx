@@ -8,12 +8,12 @@ export default function Experience() {
     <section id="experience" className="px-6 py-28">
       <div className="mx-auto max-w-4xl">
         <Reveal>
-          <SectionHeading eyebrow="Track record" title="Experience" />
+          <SectionHeading title="Experience" />
         </Reveal>
 
         <ol className="relative mt-14 border-l border-line pl-8 space-y-14">
           {experience.map((e, i) => (
-            <li key={e.org + e.role} className="relative">
+            <li key={e.org + e.role + e.period} className="relative">
               <span className="absolute -left-9.25 top-1.5 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_var(--accent-soft)]" />
 
               <Reveal delay={i * 60}>

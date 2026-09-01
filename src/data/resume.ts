@@ -135,7 +135,18 @@ export const experience: Experience[] = [
     org: "McMaster University",
     role: "Teaching Assistant — COMPSCI 2XC3 & CS 1MD3",
     location: "Hamilton, ON",
-    period: "Jan – Apr 2025, Sept – Dec 2026",
+    period: "Sept – Dec 2026",
+    bullets: [
+      "Supported students in CS 1MD3 on programming fundamentals and in COMPSCI 2XC3 on algorithm design & analysis and software design principles",
+      "Assisted with grading, technical documentation, and presentations, providing clear feedback to help students improve",
+      "Invigilated midterm and final examinations, helping ensure a smooth, organized, and fair testing environment",
+    ],
+  },
+  {
+    org: "McMaster University",
+    role: "Teaching Assistant — COMPSCI 2XC3 & CS 1MD3",
+    location: "Hamilton, ON",
+    period: "Jan – Apr 2025",
     bullets: [
       "Supported students in CS 1MD3 on programming fundamentals and in COMPSCI 2XC3 on algorithm design & analysis and software design principles",
       "Assisted with grading, technical documentation, and presentations, providing clear feedback to help students improve",

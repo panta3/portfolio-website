@@ -9,7 +9,7 @@ export default function Projects() {
     <section id="projects" className="px-6 py-28">
       <div className="mx-auto max-w-4xl">
         <Reveal>
-          <SectionHeading eyebrow="Selected work" title="Projects" />
+          <SectionHeading title="Projects" />
         </Reveal>
 
         <div className="mt-14 space-y-8">
