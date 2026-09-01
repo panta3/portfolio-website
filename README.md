@@ -1,23 +1,27 @@
 # 🚀 Aarav Pant — Portfolio
 
-**🔗 Live: https://portfolio-website-ten-virid-48.vercel.app**
+**🔗 Live: https://aarav-pant.vercel.app**
 
 Personal portfolio site — career summary, experience, and the three
 shipped projects (Cloud Security Posture Scanner, Security RAG
 Assistant, Job Application Tracker), pulled from the resume so there's
 one source of truth for the content, not three copies to keep in sync.
 
-**Status:** ✅ deployed and live on Vercel. `aaravpant.com` is
-registered (via Hostinger, doesn't expire until Jan 2027) but currently
-parked with no DNS configured — worth pointing at this deployment once
-registrar access is sorted out, but not a blocker.
+**Status:** ✅ deployed and live on Vercel, under a clean `.vercel.app`
+alias (not the auto-generated random-suffix one — see Deploy notes
+below). `aaravpant.com` is registered (via Hostinger, doesn't expire
+until Jan 2027) but currently parked with no DNS configured — worth
+pointing at this deployment once registrar access is sorted out, but
+not a blocker.
 
 ---
 
 ## 🎨 Design
 Dark, single-committed theme rather than a light/dark toggle — a
-"futuristic" personal-brand identity, not a utility app. One accent
-color (cyan) carries all the boldness; everything else stays quiet.
+"futuristic" personal-brand identity, not a utility app. A domain color
+system (not decoration) carries the boldness: cyan tags Cloud Security
+work, violet tags AI/ML, amber tags full-stack/frameworks, applied
+consistently across Projects and Skills so color encodes meaning.
 
 - **Type** — [Chakra Petch](https://fonts.google.com/specimen/Chakra+Petch)
   for display headings (angular, technical, distinct from the generic
@@ -64,6 +68,23 @@ npm run dev
 Content lives in `src/data/resume.ts` (experience, projects, skills) and
 `src/data/skillIcons.tsx` (skill → icon mapping) — edit those rather than
 the components to update what's shown.
+
+## ☁️ Deploy notes
+```bash
+vercel deploy --prod --yes
+vercel alias set <new-deployment-url> aarav-pant.vercel.app
+```
+Two real gotchas found setting this up:
+- **The clean alias doesn't auto-track new deploys.** Only Vercel's own
+  auto-generated production alias re-points itself on every `--prod`
+  deploy; a manually-set alias (`vercel alias set`) is a static pointer
+  to whatever deployment it was last assigned to. Re-run the `alias set`
+  command above after every deploy, or the clean URL silently serves a
+  stale build.
+- **New Vercel projects have SSO deployment protection on by default**
+  for every URL except a real custom domain — every `.vercel.app` alias
+  (including a clean custom one) 302s to a Vercel login wall until it's
+  disabled: `vercel project protection disable portfolio-website --sso`.
 
 ## 📌 Status
 Built, visually verified (desktop + mobile viewports), and deployed to
