@@ -1,11 +1,16 @@
 # 🚀 Aarav Pant — Portfolio
 
+**🔗 Live: https://portfolio-website-ten-virid-48.vercel.app**
+
 Personal portfolio site — career summary, experience, and the three
 shipped projects (Cloud Security Posture Scanner, Security RAG
 Assistant, Job Application Tracker), pulled from the resume so there's
 one source of truth for the content, not three copies to keep in sync.
 
-**Status:** ✅ built locally, not yet deployed.
+**Status:** ✅ deployed and live on Vercel. `aaravpant.com` is
+registered (via Hostinger, doesn't expire until Jan 2027) but currently
+parked with no DNS configured — worth pointing at this deployment once
+registrar access is sorted out, but not a blocker.
 
 ---
 
@@ -61,5 +66,6 @@ Content lives in `src/data/resume.ts` (experience, projects, skills) and
 the components to update what's shown.
 
 ## 📌 Status
-Built and visually verified locally (desktop + mobile viewports). Not
-yet deployed — Vercel is the natural target given the stack. See `TODO.md`.
+Built, visually verified (desktop + mobile viewports), and deployed to
+Vercel — see the link at the top. See `TODO.md` for what's left
+(custom domain, McMaster AI Society bullets).
