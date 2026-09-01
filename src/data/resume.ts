@@ -121,6 +121,17 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
+    org: "McMaster University",
+    role: "Teaching Assistant — CS 1MD3",
+    location: "Hamilton, ON",
+    period: "Sept – Dec 2026",
+    bullets: [
+      "Supported students on programming fundamentals — control flow, recursion, exceptions, and file I/O",
+      "Assisted with grading and technical documentation, providing clear feedback to help students improve",
+      "Invigilated midterm and final examinations, helping ensure a smooth, organized, and fair testing environment",
+    ],
+  },
+  {
     org: "Evertz Microsystems Ltd.",
     role: "Software Engineer Intern",
     location: "Burlington, ON",
@@ -133,24 +144,13 @@ export const experience: Experience[] = [
   },
   {
     org: "McMaster University",
-    role: "Teaching Assistant — COMPSCI 2XC3 & CS 1MD3",
-    location: "Hamilton, ON",
-    period: "Sept – Dec 2026",
-    bullets: [
-      "Supported students in CS 1MD3 on programming fundamentals and in COMPSCI 2XC3 on algorithm design & analysis and software design principles",
-      "Assisted with grading, technical documentation, and presentations, providing clear feedback to help students improve",
-      "Invigilated midterm and final examinations, helping ensure a smooth, organized, and fair testing environment",
-    ],
-  },
-  {
-    org: "McMaster University",
-    role: "Teaching Assistant — COMPSCI 2XC3 & CS 1MD3",
+    role: "Teaching Assistant — COMPSCI 2XC3",
     location: "Hamilton, ON",
     period: "Jan – Apr 2025",
     bullets: [
-      "Supported students in CS 1MD3 on programming fundamentals and in COMPSCI 2XC3 on algorithm design & analysis and software design principles",
-      "Assisted with grading, technical documentation, and presentations, providing clear feedback to help students improve",
-      "Invigilated midterm and final examinations, helping ensure a smooth, organized, and fair testing environment",
+      "Bridged algorithm design & analysis with software design principles through an experiential, workplace-simulated tutorial and lab approach",
+      "Gave feedback on technical documentation and presentations, helping students strengthen communication and problem-solving skills",
+      "Invigilated midterm and final examinations, helping ensure a fair, organized testing environment",
     ],
   },
   {
