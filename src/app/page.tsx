@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Coursework from "@/components/Coursework";
+import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
@@ -16,7 +16,7 @@ export default function Home() {
       <main className="relative z-10 flex-1">
         <Hero />
         <About />
-        <Coursework />
+        <Education />
         <Experience />
         <Projects />
         <Skills />

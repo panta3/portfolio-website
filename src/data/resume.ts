@@ -1,3 +1,5 @@
+import type { IconType } from "react-icons";
+import { SiGoogle } from "react-icons/si";
 import type { DomainColor } from "./theme";
 
 export type Project = {
@@ -18,6 +20,10 @@ export type Experience = {
   period: string;
   bullets: string[];
   link?: { label: string; href: string };
+  // Only set for orgs with a real, recognizable brand icon available
+  // (e.g. Google for GDSC) — everything else falls back to a monogram
+  // badge rather than a guessed or mismatched logo.
+  icon?: IconType;
 };
 
 export const person = {
@@ -37,7 +43,7 @@ export const summary =
 
 export const education = {
   school: "McMaster University",
-  program: "B.Eng in Computer Science (Honours, Co-op), 4th Year",
+  program: "B.Eng in Computer Science (Honours, Co-op) — Minor in Mathematics, 4th Year",
   period: "Sep 2022 – Apr 2027",
   detail: "Dean's Honour List · GPA 3.7/4.00",
 };
@@ -157,6 +163,7 @@ export const experience: Experience[] = [
     org: "Google Developer Student Club (GDSC)",
     role: "Open Source Team Member — Software Developer",
     location: "McMaster University",
+    icon: SiGoogle,
     period: "Oct 2024 – April 2025",
     link: { label: "GitHub", href: "https://github.com/DSC-McMaster-U/DBAC-Companion-App" },
     bullets: [
