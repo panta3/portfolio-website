@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileArrowDown } from "react-icons/fa6";
 import { person } from "@/data/resume";
 
 export default function Footer() {
@@ -40,13 +40,22 @@ export default function Footer() {
             <FaGithub size={14} />
             GitHub
           </a>
+          <a
+            href="/aarav-pant-resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-violet/40 px-6 py-3 font-mono text-xs uppercase tracking-widest text-violet-bright hover:border-violet hover:bg-violet-soft transition-colors"
+          >
+            <FaFileArrowDown size={14} />
+            Resume
+          </a>
         </div>
 
         <p className="mt-16 font-mono text-[11px] text-ink-faint">
           {person.location} &middot; {person.phone}
         </p>
         <p className="mt-2 font-mono text-[11px] text-ink-faint">
-          © {new Date().getFullYear()} {person.name}. Built with Next.js &amp; Tailwind.
+          © {new Date().getFullYear()} {person.name}
         </p>
       </div>
     </footer>

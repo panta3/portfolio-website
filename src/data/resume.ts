@@ -1,6 +1,9 @@
+import type { DomainColor } from "./theme";
+
 export type Project = {
   title: string;
   tag: string;
+  color: DomainColor;
   description: string;
   bullets: string[];
   stack: string[];
@@ -39,6 +42,31 @@ export const education = {
   detail: "Dean's Honour List · GPA 3.7/4.00",
 };
 
+export const coursework = [
+  "Discrete Math",
+  "Introduction to Programming",
+  "Intro to Software Using Web Programming",
+  "Automata and Computability",
+  "Data Structures & Algorithms",
+  "Databases",
+  "Computer Architecture",
+  "Intro to Software Development",
+  "Concurrent Systems",
+  "Algorithms and Software Design",
+  "Algorithms and Complexity",
+  "Data Privacy",
+  "Principles of Programming Languages",
+  "Computer Networks and Security",
+  "Operating Systems",
+  "Syntax-Based Tools & Compilers",
+  "Applied Cryptography",
+  "Software Testing",
+  "Fundamentals of Machine Learning",
+  "Linear Optimization",
+  "Continuous Optimization",
+  "Capstone Project",
+];
+
 export const certifications = [
   { name: "CompTIA Security+ (SY0-701)", status: "In progress — Dec 2026" },
   { name: "AWS Solutions Architect (SAA-C03)", status: "In progress — Jan 2027" },
@@ -49,6 +77,7 @@ export const projects: Project[] = [
   {
     title: "AWS Cloud Security Posture Scanner",
     tag: "Cloud Security",
+    color: "cyan",
     description:
       "Automated auditing tool that scans AWS accounts against CIS Foundations Benchmark controls, tracks findings through a real lifecycle, and can safely auto-remediate low-risk issues.",
     bullets: [
@@ -62,6 +91,7 @@ export const projects: Project[] = [
   {
     title: "Security-Focused RAG Assistant",
     tag: "AI / ML",
+    color: "violet",
     description:
       "RAG pipeline over security and compliance documents — grounded, citation-backed answers with a measured hallucination rate instead of blind trust in the model's output.",
     bullets: [
@@ -76,6 +106,7 @@ export const projects: Project[] = [
   {
     title: "Job Application Tracker",
     tag: "Full-Stack",
+    color: "amber",
     description:
       "A full-stack personal CRM for the job/co-op search — a status pipeline and live funnel stats instead of a spreadsheet.",
     bullets: [
@@ -144,12 +175,14 @@ export const experience: Experience[] = [
 
 export type SkillGroup = {
   label: string;
+  color: DomainColor;
   skills: string[];
 };
 
 export const skillGroups: SkillGroup[] = [
   {
     label: "Languages",
+    color: "cyan",
     skills: [
       "Python",
       "Java",
@@ -167,10 +200,12 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "Databases",
+    color: "cyan",
     skills: ["MySQL", "MongoDB", "PostgreSQL", "SQLite"],
   },
   {
     label: "AI / ML",
+    color: "violet",
     skills: [
       "PyTorch",
       "TensorFlow",
@@ -185,6 +220,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "Frameworks & Tools",
+    color: "amber",
     skills: [
       "React",
       "React Native",
@@ -211,6 +247,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "Cloud & DevOps",
+    color: "cyan",
     skills: [
       "AWS",
       "GCP",

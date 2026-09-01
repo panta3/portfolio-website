@@ -13,6 +13,21 @@
   --accent-bright: #6bf2de;
   --accent-soft: #0e2624;
   --glow: rgba(53, 224, 201, 0.28);
+
+  /* Domain colors — not decoration: cyan tags Cloud Security work,
+     violet tags AI/ML, amber tags full-stack/frameworks. Used
+     consistently across Projects and Skills so color carries meaning. */
+  --violet: #a78bfa;
+  --violet-bright: #c4b5fd;
+  --violet-soft: #1c1a2e;
+  --violet-line: #322d54;
+  --violet-glow: rgba(167, 139, 250, 0.28);
+
+  --amber: #f5b84e;
+  --amber-bright: #ffd27a;
+  --amber-soft: #2a220e;
+  --amber-line: #4a3c1c;
+  --amber-glow: rgba(245, 184, 78, 0.28);
 }
 
 @theme inline {
@@ -27,6 +42,12 @@
   --color-accent: var(--accent);
   --color-accent-bright: var(--accent-bright);
   --color-accent-soft: var(--accent-soft);
+  --color-violet: var(--violet);
+  --color-violet-bright: var(--violet-bright);
+  --color-violet-soft: var(--violet-soft);
+  --color-amber: var(--amber);
+  --color-amber-bright: var(--amber-bright);
+  --color-amber-soft: var(--amber-soft);
   --font-display: var(--font-chakra);
   --font-sans: var(--font-plex-sans);
   --font-mono: var(--font-plex-mono);

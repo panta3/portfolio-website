@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaFileArrowDown } from "react-icons/fa6";
 import { person } from "@/data/resume";
 
 const links = [
@@ -45,13 +45,22 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-4 text-ink-soft">
+        <div className="flex items-center gap-4">
+          <a
+            href="/aarav-pant-resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-violet/40 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest text-violet-bright hover:border-violet hover:bg-violet-soft transition-colors"
+          >
+            <FaFileArrowDown size={11} />
+            Resume
+          </a>
           <a
             href={person.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="hover:text-accent transition-colors"
+            className="text-ink-soft hover:text-accent transition-colors"
           >
             <FaGithub size={17} />
           </a>
@@ -60,7 +69,7 @@ export default function Nav() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-accent transition-colors"
+            className="text-ink-soft hover:text-accent transition-colors"
           >
             <FaLinkedin size={17} />
           </a>

@@ -47,7 +47,14 @@ export default function ParticleField() {
       positions.push(v);
     }
 
-    const pointGeometry = new THREE.BufferGeometry().setFromPoints(positions);
+    // Two color families rather than one flat color — most nodes cyan,
+    // roughly a fifth violet, so the field reads as multi-tone without
+    // losing the "constellation" cohesion (lines stay a single color).
+    const violetEvery = 5;
+    const cyanPositions = positions.filter((_, i) => i % violetEvery !== 0);
+    const violetPositions = positions.filter((_, i) => i % violetEvery === 0);
+
+    const cyanGeometry = new THREE.BufferGeometry().setFromPoints(cyanPositions);
     const pointMaterial = new THREE.PointsMaterial({
       color: 0x35e0c9,
       size: 0.045,
@@ -55,7 +62,17 @@ export default function ParticleField() {
       opacity: 0.85,
       sizeAttenuation: true,
     });
-    group.add(new THREE.Points(pointGeometry, pointMaterial));
+    group.add(new THREE.Points(cyanGeometry, pointMaterial));
+
+    const violetGeometry = new THREE.BufferGeometry().setFromPoints(violetPositions);
+    const violetPointMaterial = new THREE.PointsMaterial({
+      color: 0xa78bfa,
+      size: 0.05,
+      transparent: true,
+      opacity: 0.8,
+      sizeAttenuation: true,
+    });
+    group.add(new THREE.Points(violetGeometry, violetPointMaterial));
 
     // Constellation lines between nearby nodes — computed once, not
     // per-frame, since the points themselves don't move relative to
@@ -122,6 +139,7 @@ export default function ParticleField() {
 
       const fade = 1 - scrollProgress;
       pointMaterial.opacity = 0.85 * fade;
+      violetPointMaterial.opacity = 0.8 * fade;
       lineMaterial.opacity = 0.08 * fade;
 
       renderer.render(scene, camera);
@@ -130,6 +148,7 @@ export default function ParticleField() {
 
     if (prefersReducedMotion) {
       pointMaterial.opacity = 0.5;
+      violetPointMaterial.opacity = 0.45;
       lineMaterial.opacity = 0.05;
       renderer.render(scene, camera);
     } else {
@@ -141,8 +160,10 @@ export default function ParticleField() {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
-      pointGeometry.dispose();
+      cyanGeometry.dispose();
       pointMaterial.dispose();
+      violetGeometry.dispose();
+      violetPointMaterial.dispose();
       lineGeometry.dispose();
       lineMaterial.dispose();
       renderer.dispose();
