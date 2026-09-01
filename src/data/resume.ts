@@ -167,10 +167,13 @@ export const experience: Experience[] = [
   },
   {
     org: "McMaster Artificial Intelligence Society",
-    role: "Software Developer",
+    role: "Frontend Developer",
     location: "Hamilton, ON (Hybrid)",
     period: "Sept 2024 – Feb 2025",
-    bullets: [],
+    bullets: [
+      "Designed and built the UI for a React Native mobile app as the team's frontend developer",
+      "Contributed to a gym posture-correction app that analyzes exercise form in real time and suggests corrections for safer, more effective workouts",
+    ],
   },
   {
     org: "Zenit Excelencia",
