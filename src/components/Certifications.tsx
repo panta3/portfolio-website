@@ -1,3 +1,4 @@
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { certifications, completedCertifications } from "@/data/resume";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
@@ -33,13 +34,17 @@ export default function Certifications() {
           </p>
           <div className="flex flex-wrap gap-2">
             {completedCertifications.map((c) => (
-              <div
+              <a
                 key={c.name}
-                className="rounded-full border border-line px-3.5 py-1.5 text-xs text-ink-soft transition-colors hover:border-accent/40 hover:text-ink"
+                href={c.url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-xs text-ink-soft transition-colors hover:border-accent/40 hover:text-ink"
               >
                 {c.name}
                 <span className="text-ink-faint"> · {c.issuer}</span>
-              </div>
+                <FaArrowUpRightFromSquare size={9} className="text-ink-faint shrink-0" />
+              </a>
             ))}
           </div>
         </Reveal>

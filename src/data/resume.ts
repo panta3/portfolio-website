@@ -81,16 +81,56 @@ export const certifications = [
 ];
 
 export const completedCertifications = [
-  { name: "Programming with JavaScript", issuer: "Meta · Coursera" },
-  { name: "Version Control", issuer: "Meta · Coursera" },
-  { name: "Introduction to Front-End Development", issuer: "Meta · Coursera" },
-  { name: "Introduction to Web Development (HTML, CSS, JavaScript)", issuer: "IBM · Coursera" },
-  { name: "Python for Data Science, AI & Development", issuer: "IBM · Coursera" },
-  { name: "Learn CSS", issuer: "Codecademy" },
-  { name: "Learn SQL", issuer: "Codecademy" },
-  { name: "Learn HTML", issuer: "Codecademy" },
-  { name: "Learn C", issuer: "Codecademy" },
-  { name: "Learn Python 3", issuer: "Codecademy" },
+  {
+    name: "Programming with JavaScript",
+    issuer: "Meta · Coursera",
+    url: "https://www.coursera.org/account/accomplishments/certificate/ZAPNBVWNJPSN",
+  },
+  {
+    name: "Version Control",
+    issuer: "Meta · Coursera",
+    url: "https://www.coursera.org/account/accomplishments/certificate/QA4NGX4EUS26",
+  },
+  {
+    name: "Introduction to Front-End Development",
+    issuer: "Meta · Coursera",
+    url: "https://www.coursera.org/account/accomplishments/certificate/BDFHG8WU7T5Y",
+  },
+  {
+    name: "Introduction to Web Development (HTML, CSS, JavaScript)",
+    issuer: "IBM · Coursera",
+    url: "https://www.coursera.org/account/accomplishments/certificate/PSV8KAAXKPVE",
+  },
+  {
+    name: "Python for Data Science, AI & Development",
+    issuer: "IBM · Coursera",
+    url: "https://www.coursera.org/account/accomplishments/certificate/LF74RHD6ASGC",
+  },
+  {
+    name: "Learn CSS",
+    issuer: "Codecademy",
+    url: "https://www.codecademy.com/profiles/method2593634153/certificates/9a5bb1fc45b4281af1fffec93b0aaf05",
+  },
+  {
+    name: "Learn SQL",
+    issuer: "Codecademy",
+    url: "https://www.codecademy.com/profiles/method2593634153/certificates/042a4e5884e3eb6ea1f2a12be6abb851",
+  },
+  {
+    name: "Learn HTML",
+    issuer: "Codecademy",
+    url: "https://www.codecademy.com/profiles/method2593634153/certificates/9eb0741e5ebef1f9f58a53bfac67d3a7",
+  },
+  {
+    name: "Learn C",
+    issuer: "Codecademy",
+    url: "https://www.codecademy.com/profiles/method2593634153/certificates/9dba9d9b6bf64cf58b2b416ef9cd0912",
+  },
+  {
+    name: "Learn Python 3",
+    issuer: "Codecademy",
+    url: "https://www.codecademy.com/profiles/method2593634153/certificates/6c152bd262967f8c941c9707ed636bda",
+  },
 ];
 
 export const projects: Project[] = [
