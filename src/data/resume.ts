@@ -176,6 +176,7 @@ export const projects: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
     github: "https://github.com/panta3/job-application-tracker",
+    demo: "https://job-application-tracker-alpha-lime.vercel.app",
   },
 ];
 
