@@ -80,6 +80,19 @@ export const certifications = [
   { name: "Google Professional ML Engineer", status: "Targeted — Feb 2027" },
 ];
 
+export const completedCertifications = [
+  { name: "Programming with JavaScript", issuer: "Meta · Coursera" },
+  { name: "Version Control", issuer: "Meta · Coursera" },
+  { name: "Introduction to Front-End Development", issuer: "Meta · Coursera" },
+  { name: "Introduction to Web Development (HTML, CSS, JavaScript)", issuer: "IBM · Coursera" },
+  { name: "Python for Data Science, AI & Development", issuer: "IBM · Coursera" },
+  { name: "Learn CSS", issuer: "Codecademy" },
+  { name: "Learn SQL", issuer: "Codecademy" },
+  { name: "Learn HTML", issuer: "Codecademy" },
+  { name: "Learn C", issuer: "Codecademy" },
+  { name: "Learn Python 3", issuer: "Codecademy" },
+];
+
 export const projects: Project[] = [
   {
     title: "AWS Cloud Security Posture Scanner",
