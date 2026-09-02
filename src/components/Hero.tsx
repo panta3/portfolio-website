@@ -26,10 +26,8 @@ export default function Hero() {
           {person.name}
         </h1>
 
-        <p className="mt-6 font-mono text-sm sm:text-base uppercase tracking-widest">
-          <span className="text-accent-bright">AI/ML Engineering</span>
-          <span className="text-ink-faint"> &amp; </span>
-          <span className="text-violet-bright">Cloud Security</span>
+        <p className="mt-6 font-mono text-sm sm:text-base uppercase tracking-widest text-accent-bright">
+          {person.title}
         </p>
 
         <p className="mt-6 max-w-xl mx-auto text-ink-soft text-base sm:text-lg leading-relaxed">

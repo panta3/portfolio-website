@@ -21,9 +21,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aarav Pant — AI/ML & Cloud Security Engineer",
+  title: "Aarav Pant — Software Engineer | AI/ML & Cloud Security",
   description:
-    "Portfolio of Aarav Pant, a Computer Science student building AI/ML and cloud security systems — RAG pipelines, AWS security automation, and full-stack tools.",
+    "Portfolio of Aarav Pant, a Computer Science student building full-stack, AI/ML, and cloud security systems — RAG pipelines, AWS security automation, and full-stack tools.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

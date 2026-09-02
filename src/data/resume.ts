@@ -29,7 +29,7 @@ export type Experience = {
 
 export const person = {
   name: "Aarav Pant",
-  title: "AI/ML Engineering & Cloud Security",
+  title: "Software Engineer | AI/ML & Cloud Security",
   tagline:
     "4th-year Computer Science student who builds real, working software — not just demos.",
   location: "Hamilton, ON",
@@ -40,7 +40,7 @@ export const person = {
 };
 
 export const summary =
-  "Fourth-year Computer Science student pursuing a career in AI/ML Engineering and Cloud Security. My work spans 16 months of software engineering at Evertz, hands-on cloud security tooling — automated AWS auditing, opt-in remediation, Kubernetes security checks — and 8 months as a Teaching Assistant mentoring students through algorithm design and software development. Currently working toward CompTIA Security+, AWS Solutions Architect, and Google Professional ML Engineer certifications.";
+  "Fourth-year Computer Science student pursuing a career as a Software Engineer specializing in AI/ML and Cloud Security. My work spans 16 months of software engineering at Evertz, hands-on cloud security tooling — automated AWS auditing, opt-in remediation, Kubernetes security checks — and 8 months as a Teaching Assistant mentoring students through algorithm design and software development. Currently working toward CompTIA Security+, AWS Solutions Architect, and Google Professional ML Engineer certifications.";
 
 export const education = {
   school: "McMaster University",
