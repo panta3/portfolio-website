@@ -141,6 +141,7 @@ export const experience: Experience[] = [
   },
   {
     org: "Evertz Microsystems Ltd.",
+    logo: "/logos/evertz.jpg",
     role: "Software Engineer Intern",
     location: "Burlington, ON",
     period: "May 2025 – August 2026",
@@ -177,6 +178,7 @@ export const experience: Experience[] = [
   },
   {
     org: "McMaster Artificial Intelligence Society",
+    logo: "/logos/mcmaster-ai-society.jpg",
     role: "Frontend Developer",
     location: "Hamilton, ON (Hybrid)",
     period: "Sept 2024 – Feb 2025",
