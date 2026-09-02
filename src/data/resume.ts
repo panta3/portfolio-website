@@ -31,7 +31,7 @@ export const person = {
   name: "Aarav Pant",
   title: "AI/ML Engineering & Cloud Security",
   tagline:
-    "4th-year Computer Science student building systems that get audited, measured, and shipped — not just demoed.",
+    "4th-year Computer Science student who builds real, working software — not just demos.",
   location: "Hamilton, ON",
   email: "panta3@mcmaster.ca",
   phone: "+1 (289) 556-4332",
