@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { experience, type Experience as ExperienceEntry } from "@/data/resume";
 import SectionHeading from "@/components/SectionHeading";
@@ -12,7 +13,32 @@ function initials(org: string): string {
     .toUpperCase();
 }
 
-function OrgAvatar({ org, icon: Icon }: { org: string; icon?: ExperienceEntry["icon"] }) {
+function OrgAvatar({
+  org,
+  logo,
+  icon: Icon,
+}: {
+  org: string;
+  logo?: ExperienceEntry["logo"];
+  icon?: ExperienceEntry["icon"];
+}) {
+  if (logo) {
+    // Logo images have their own white/light backgrounds — a white
+    // backing here keeps them looking intentional instead of like a
+    // stray light rectangle against the dark card.
+    return (
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-line bg-white p-1.5">
+        <Image
+          src={logo}
+          alt={`${org} logo`}
+          width={40}
+          height={40}
+          className="h-full w-full object-contain"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-line bg-bg-elevated-2">
       {Icon ? (
@@ -39,7 +65,7 @@ export default function Experience() {
 
               <Reveal delay={i * 60}>
                 <div className="flex items-start gap-4">
-                  <OrgAvatar org={e.org} icon={e.icon} />
+                  <OrgAvatar org={e.org} logo={e.logo} icon={e.icon} />
 
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">

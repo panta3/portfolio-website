@@ -1,5 +1,4 @@
 import type { IconType } from "react-icons";
-import { SiGoogle } from "react-icons/si";
 import type { DomainColor } from "./theme";
 
 export type Project = {
@@ -20,9 +19,11 @@ export type Experience = {
   period: string;
   bullets: string[];
   link?: { label: string; href: string };
-  // Only set for orgs with a real, recognizable brand icon available
-  // (e.g. Google for GDSC) — everything else falls back to a monogram
-  // badge rather than a guessed or mismatched logo.
+  // Real logo image (public/logos/*), preferred when available.
+  logo?: string;
+  // Fallback for orgs with a recognizable brand icon but no logo image
+  // on hand. Orgs with neither fall back to a monogram badge rather
+  // than a guessed or mismatched logo.
   icon?: IconType;
 };
 
@@ -128,6 +129,7 @@ export const projects: Project[] = [
 export const experience: Experience[] = [
   {
     org: "McMaster University",
+    logo: "/logos/mcmaster.jpg",
     role: "Teaching Assistant — CS 1MD3",
     location: "Hamilton, ON",
     period: "Sept – Dec 2026",
@@ -150,6 +152,7 @@ export const experience: Experience[] = [
   },
   {
     org: "McMaster University",
+    logo: "/logos/mcmaster.jpg",
     role: "Teaching Assistant — COMPSCI 2XC3",
     location: "Hamilton, ON",
     period: "Jan – Apr 2025",
@@ -163,7 +166,7 @@ export const experience: Experience[] = [
     org: "Google Developer Student Club (GDSC)",
     role: "Open Source Team Member — Software Developer",
     location: "McMaster University",
-    icon: SiGoogle,
+    logo: "/logos/gdsc.jpg",
     period: "Oct 2024 – April 2025",
     link: { label: "GitHub", href: "https://github.com/DSC-McMaster-U/DBAC-Companion-App" },
     bullets: [
@@ -184,6 +187,7 @@ export const experience: Experience[] = [
   },
   {
     org: "Zenit Excelencia",
+    logo: "/logos/zenit.jpg",
     role: "Software Engineer Intern",
     location: "Delhi, India (Remote)",
     period: "Jul – Sept 2023",

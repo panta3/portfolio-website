@@ -14,6 +14,15 @@ export default function ParticleField() {
     const mount = mountRef.current;
     if (!mount) return;
 
+    // A full-viewport WebGL scene rendering every frame is too heavy for
+    // most phone GPUs — it doesn't crash, it just makes the whole page
+    // feel laggy/unresponsive since the GPU/CPU stays busy on 3D instead
+    // of scrolling and touch handling. Skip it below the tablet
+    // breakpoint rather than trying to make it cheap enough there; the
+    // CSS grid-field texture already gives the hero some visual texture
+    // without any of this cost.
+    if (window.innerWidth < 768) return;
+
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
