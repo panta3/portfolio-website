@@ -158,7 +158,7 @@ export const projects: Project[] = [
       "Multi-format ingestion (PDF + text) over 5 real documents — NIST CSF 2.0, OWASP Top 10, AWS Well-Architected Framework, the Twelve-Factor App, and Kubernetes/SemVer reference docs",
       "GPU-accelerated embeddings + a locally-hosted LLM, quantized (GGUF) for a 37x CPU inference speedup in production",
       "Structural hallucination guard that rejects generation below an empirically-derived retrieval-confidence threshold",
-      "39-question evaluation harness spanning all 5 documents, tracking retrieval precision, citation accuracy, and hallucination rate per (source doc, page)",
+      "39-question evaluation harness spanning all 5 documents — 74.3% retrieval precision, 74.3% citation accuracy, 80% keyword recall, 0% hallucination rate",
     ],
     stack: ["FastAPI", "PyTorch", "Chroma", "GCP Cloud Run", "Docker"],
     github: "https://github.com/panta3/security-rag-assistant",
