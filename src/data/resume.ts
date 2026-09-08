@@ -149,15 +149,16 @@ export const projects: Project[] = [
     github: "https://github.com/panta3/cloud-security-posture-scanner",
   },
   {
-    title: "Security-Focused RAG Assistant",
+    title: "Technical Knowledge RAG Assistant",
     tag: "AI / ML",
     color: "violet",
     description:
-      "RAG pipeline over security and compliance documents — grounded, citation-backed answers with a measured hallucination rate instead of blind trust in the model's output.",
+      "RAG pipeline over a multi-domain technical corpus — security frameworks, cloud architecture, and software engineering references — with grounded, citation-backed answers and a measured hallucination rate instead of blind trust in the model's output.",
     bullets: [
+      "Multi-format ingestion (PDF + text) over 5 real documents — NIST CSF 2.0, OWASP Top 10, AWS Well-Architected Framework, the Twelve-Factor App, and Kubernetes/SemVer reference docs",
       "GPU-accelerated embeddings + a locally-hosted LLM, quantized (GGUF) for a 37x CPU inference speedup in production",
       "Structural hallucination guard that rejects generation below an empirically-derived retrieval-confidence threshold",
-      "28-question evaluation harness — 66.7% retrieval precision, 66.7% citation accuracy, 0% hallucination rate",
+      "39-question evaluation harness spanning all 5 documents, tracking retrieval precision, citation accuracy, and hallucination rate per (source doc, page)",
     ],
     stack: ["FastAPI", "PyTorch", "Chroma", "GCP Cloud Run", "Docker"],
     github: "https://github.com/panta3/security-rag-assistant",
@@ -186,7 +187,7 @@ export const experience: Experience[] = [
     logo: "/logos/mcmaster.jpg",
     role: "Teaching Assistant — CS 1MD3",
     location: "Hamilton, ON",
-    period: "Sept – Dec 2026",
+    period: "Sept 2026 – Present",
     bullets: [
       "Supported students on programming fundamentals — control flow, recursion, exceptions, and file I/O",
       "Assisted with grading and technical documentation, providing clear feedback to help students improve",
