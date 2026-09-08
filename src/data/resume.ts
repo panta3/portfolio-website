@@ -203,7 +203,7 @@ export const experience: Experience[] = [
     bullets: [
       "Developed and executed comprehensive test cases for the Mediator-X platform, ensuring robust media asset management and playout functionality across diverse client environments",
       "Collaborated directly with clients to gather requirements and deliver customized solutions, including dynamic reports, SQL queries, and automation scripts",
-      "Engineered automation tools using Python and JavaScript to streamline repetitive tasks within Mediator-X workflows, reducing manual intervention",
+      "Engineered automation tools using Python and JavaScript to streamline Mediator-X workflows, cutting one script's runtime from ~2 minutes to under 1 minute",
     ],
   },
   {
@@ -213,9 +213,9 @@ export const experience: Experience[] = [
     location: "Hamilton, ON",
     period: "Jan – Apr 2025",
     bullets: [
-      "Bridged algorithm design & analysis with software design principles through an experiential, workplace-simulated tutorial and lab approach",
-      "Gave feedback on technical documentation and presentations, helping students strengthen communication and problem-solving skills",
-      "Invigilated midterm and final examinations, helping ensure a fair, organized testing environment",
+      "Bridged algorithm design & analysis with software design principles across lab sections of 30-40 students, through an experiential, workplace-simulated tutorial approach",
+      "Graded 150+ exams and gave feedback on technical documentation and presentations, helping students strengthen communication and problem-solving skills",
+      "Invigilated midterm and final examinations alongside the course instructor, helping ensure a fair, organized testing environment",
     ],
   },
   {
@@ -315,8 +315,6 @@ export const skillGroups: SkillGroup[] = [
       "Three.js",
       "Firebase",
       "FastAPI",
-      "Spring Boot",
-      "Angular",
       "Docker",
       "Kubernetes",
       "Jenkins",
