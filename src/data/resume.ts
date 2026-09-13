@@ -179,6 +179,20 @@ export const projects: Project[] = [
     github: "https://github.com/panta3/job-application-tracker",
     demo: "https://job-application-tracker-alpha-lime.vercel.app",
   },
+  {
+    title: "Algorithmic Trading Signal Scanner",
+    tag: "Full-Stack",
+    color: "amber",
+    description:
+      "Two independent rule-based scoring engines — an intraday scanner and a swing evaluator — that score live market data against a multi-factor confluence model and log every signal for accuracy tracking, with a full-stack dashboard and real broker integration.",
+    bullets: [
+      "5-min intraday scanner and swing evaluator scoring live data on VWAP, RSI, OBV, relative strength, and order-flow signals, each independently backtested and accuracy-tracked",
+      "Full-stack Flask + React dashboard with live charting, an Interactive Brokers data/execution layer (ib_insync), and a custom MCP server exposing broker data to AI agents",
+      "Walk-forward backtesting across multiple index universes; used measured live results to permanently disable a losing signal mode (0.06 profit factor) rather than keep it running",
+    ],
+    stack: ["Python", "Flask", "React", "Interactive Brokers API"],
+    github: "https://github.com/panta3/Trade_suggestion",
+  },
 ];
 
 export const experience: Experience[] = [
