@@ -186,7 +186,7 @@ export const projects: Project[] = [
     description:
       "Two independent rule-based scoring engines — an intraday scanner and a swing evaluator — that score live market data against a multi-factor confluence model and log every signal for accuracy tracking, with a full-stack dashboard and real broker integration.",
     bullets: [
-      "5-min intraday scanner and swing evaluator scoring live data on VWAP, RSI, OBV, relative strength, and order-flow signals, each independently backtested and accuracy-tracked",
+      "5-min intraday scanner and swing evaluator scoring live data on VWAP, RSI, OBV, relative strength, and order-flow signals, each independently backtested and accuracy-tracked, with push alerts (ntfy) on high-grade setups",
       "Full-stack Flask + React dashboard with live charting, an Interactive Brokers data/execution layer (ib_insync), and a custom MCP server exposing broker data to AI agents",
       "Walk-forward backtesting across multiple index universes; used measured live results to permanently disable a losing signal mode (0.06 profit factor) rather than keep it running",
     ],
