@@ -134,6 +134,36 @@ export const completedCertifications = [
 ];
 
 export const projects: Project[] = [
+  // Ordered by when each project was created, oldest first (see git history / file dates).
+  {
+    title: "Algorithmic Trading Signal Scanner",
+    tag: "Full-Stack",
+    color: "amber",
+    description:
+      "Two independent rule-based scoring engines — an intraday scanner and a swing evaluator — that score live market data against a multi-factor confluence model and log every signal for accuracy tracking, with a full-stack dashboard and real broker integration.",
+    bullets: [
+      "5-min intraday scanner and swing evaluator scoring live data on VWAP, RSI, OBV, relative strength, and order-flow signals, each independently backtested and accuracy-tracked, with push alerts (ntfy) on high-grade setups",
+      "Full-stack Flask + React dashboard with live charting, an Interactive Brokers data/execution layer (ib_insync), and a custom MCP server exposing broker data to AI agents",
+      "Walk-forward backtesting across multiple index universes; used measured live results to permanently disable a losing signal mode (0.06 profit factor) rather than keep it running",
+    ],
+    stack: ["Python", "Flask", "React", "Interactive Brokers API"],
+    github: "https://github.com/panta3/Trade_suggestion",
+  },
+  {
+    title: "Job Application Tracker",
+    tag: "Full-Stack",
+    color: "amber",
+    description:
+      "A full-stack personal CRM for the job/co-op search — a status pipeline and live funnel stats instead of a spreadsheet.",
+    bullets: [
+      "Status pipeline (Applied → OA → Interview → Offer/Rejected) with a dashboard showing real-time funnel conversion",
+      "Prisma-backed Next.js application with a follow-up reminder system that flags stale applications after 14 days",
+      "All API inputs validated at the boundary with Zod, plus indexed database queries matching actual access patterns",
+    ],
+    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
+    github: "https://github.com/panta3/job-application-tracker",
+    demo: "https://job-application-tracker-alpha-lime.vercel.app",
+  },
   {
     title: "AWS Cloud Security Posture Scanner",
     tag: "Cloud Security",
@@ -165,33 +195,20 @@ export const projects: Project[] = [
     demo: "https://security-rag-assistant-x3hib67cua-uc.a.run.app",
   },
   {
-    title: "Job Application Tracker",
+    title: "PDF Studio",
     tag: "Full-Stack",
     color: "amber",
     description:
-      "A full-stack personal CRM for the job/co-op search — a status pipeline and live funnel stats instead of a spreadsheet.",
+      "A browser-based PDF editor for merging, signing, filling forms and marking up documents. All processing runs client-side, so files never leave the user's device.",
     bullets: [
-      "Status pipeline (Applied → OA → Interview → Offer/Rejected) with a dashboard showing real-time funnel conversion",
-      "Prisma-backed Next.js application with a follow-up reminder system that flags stale applications after 14 days",
-      "All API inputs validated at the boundary with Zod, plus indexed database queries matching actual access patterns",
+      "Merge and reorder pages across documents, sign with a drawn, typed or uploaded signature, fill form fields, and mark up with text, highlights and images, with full undo/redo",
+      "Real redaction: pages with redaction boxes are rendered to an image with the box burned in, and the content was verified absent from the exported file's raw bytes, not just hidden",
+      "Click-to-edit for existing text via pdf.js text extraction, plus per-character font fallback (Noto Sans) for Latin Extended, Greek, Cyrillic and Vietnamese",
+      "Maps on-screen annotations to PDF coordinates across page rotation, crop boxes and pages with their own /Rotate, checked by driving a real browser and inspecting exported files",
     ],
-    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
-    github: "https://github.com/panta3/job-application-tracker",
-    demo: "https://job-application-tracker-alpha-lime.vercel.app",
-  },
-  {
-    title: "Algorithmic Trading Signal Scanner",
-    tag: "Full-Stack",
-    color: "amber",
-    description:
-      "Two independent rule-based scoring engines — an intraday scanner and a swing evaluator — that score live market data against a multi-factor confluence model and log every signal for accuracy tracking, with a full-stack dashboard and real broker integration.",
-    bullets: [
-      "5-min intraday scanner and swing evaluator scoring live data on VWAP, RSI, OBV, relative strength, and order-flow signals, each independently backtested and accuracy-tracked, with push alerts (ntfy) on high-grade setups",
-      "Full-stack Flask + React dashboard with live charting, an Interactive Brokers data/execution layer (ib_insync), and a custom MCP server exposing broker data to AI agents",
-      "Walk-forward backtesting across multiple index universes; used measured live results to permanently disable a losing signal mode (0.06 profit factor) rather than keep it running",
-    ],
-    stack: ["Python", "Flask", "React", "Interactive Brokers API"],
-    github: "https://github.com/panta3/Trade_suggestion",
+    stack: ["Next.js", "TypeScript", "pdf-lib", "pdf.js", "Tailwind CSS"],
+    github: "https://github.com/panta3/pdf-studio",
+    demo: "https://pdf-studio-pearl.vercel.app",
   },
 ];
 
