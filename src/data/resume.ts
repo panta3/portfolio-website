@@ -210,6 +210,21 @@ export const projects: Project[] = [
     github: "https://github.com/panta3/pdf-studio",
     demo: "https://pdf-studio-pearl.vercel.app",
   },
+  {
+    title: "Job Posting Watcher",
+    tag: "Cloud & Automation",
+    color: "cyan",
+    description:
+      "A serverless watcher that reads ~930 employers' hiring systems directly every 15 minutes and pushes new entry-level tech roles in Canada to my phone, often before they reach job boards, with a web app to rank, apply to and track them.",
+    bullets: [
+      "20+ source adapters (Workday, Greenhouse, Lever, Ashby, Oracle Recruiting Cloud, SAP SuccessFactors, Eightfold and more) scanning ~64,000 postings in under a minute; 741 employers were auto-discovered by mining and live-probing ~4,200 hiring-system links",
+      "Filtering pipeline for English and French titles, Canadian locations (telling Burlington, ON from Burlington, MA), years-of-experience and start-date extraction, cross-feed de-duplication and closed-posting detection, plus resume-fit scoring",
+      "Runs on AWS Lambda, EventBridge Scheduler and S3, provisioned with Terraform and kept at ~$0/month by batching state writes; the same function serves a token-gated web app with an application pipeline and 14-day follow-up reminders",
+      "Validated against live data: fixed a Workday bug where pinned postings hid every new TD job, and a SQLite lock leak that froze scans (transactional writes, WAL mode and a single-run lock)",
+    ],
+    stack: ["Python", "AWS Lambda", "Terraform", "S3", "SQLite"],
+    github: "https://github.com/panta3/job-watcher",
+  },
 ];
 
 export const experience: Experience[] = [
