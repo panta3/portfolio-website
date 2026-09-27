@@ -47,9 +47,12 @@ consistently across Projects and Skills so color encodes meaning.
 ## ✅ Sections
 - [x] 🏠 Hero — name, role, tagline, CTAs
 - [x] 📝 About — career summary + certification progress
+- [x] 🎓 Education — McMaster, GPA, coursework
+- [x] 📜 Certifications — in-progress targets plus completed certs, each linked to its credential
 - [x] 💼 Experience — full timeline, including two roles not on the
       1-page resume (space-constrained there; the site has room)
-- [x] 🗂️ Projects — all 3 shipped projects, GitHub + live demo links
+- [x] 🗂️ Projects — all 6 projects, newest first, with GitHub and live demo links; data lives in
+      `src/data/resume.ts` (add new projects at the top)
 - [x] 🛠️ Skills — grouped, icon-labeled, pulled straight from the resume
 - [x] 📬 Contact — email / LinkedIn / GitHub
 
@@ -85,6 +88,8 @@ Two real gotchas found setting this up:
   for every URL except a real custom domain — every `.vercel.app` alias
   (including a clean custom one) 302s to a Vercel login wall until it's
   disabled: `vercel project protection disable portfolio-website --sso`.
+- **The downloadable resume is a copy.** `public/aarav-pant-resume.pdf` doesn't update itself:
+  after every resume change, copy the new PDF over it and redeploy, or the site serves an old resume.
 
 ## 📌 Status
 Built, visually verified (desktop + mobile viewports), and deployed to
