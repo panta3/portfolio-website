@@ -134,65 +134,21 @@ export const completedCertifications = [
 ];
 
 export const projects: Project[] = [
-  // Ordered by when each project was created, oldest first (see git history / file dates).
+  // Newest first (descending by when each project was created).
   {
-    title: "Algorithmic Trading Signal Scanner",
-    tag: "Full-Stack",
-    color: "amber",
-    description:
-      "Two independent rule-based scoring engines — an intraday scanner and a swing evaluator — that score live market data against a multi-factor confluence model and log every signal for accuracy tracking, with a full-stack dashboard and real broker integration.",
-    bullets: [
-      "5-min intraday scanner and swing evaluator scoring live data on VWAP, RSI, OBV, relative strength, and order-flow signals, each independently backtested and accuracy-tracked, with push alerts (ntfy) on high-grade setups",
-      "Full-stack Flask + React dashboard with live charting, an Interactive Brokers data/execution layer (ib_insync), and a custom MCP server exposing broker data to AI agents",
-      "Walk-forward backtesting across multiple index universes; used measured live results to permanently disable a losing signal mode (0.06 profit factor) rather than keep it running",
-    ],
-    stack: ["Python", "Flask", "React", "Interactive Brokers API"],
-    github: "https://github.com/panta3/Trade_suggestion",
-  },
-  {
-    title: "Job Application Tracker",
-    tag: "Full-Stack",
-    color: "amber",
-    description:
-      "A full-stack personal CRM for the job/co-op search — a status pipeline and live funnel stats instead of a spreadsheet.",
-    bullets: [
-      "Status pipeline (Applied → OA → Interview → Offer/Rejected) with a dashboard showing real-time funnel conversion",
-      "Prisma-backed Next.js application with a follow-up reminder system that flags stale applications after 14 days",
-      "All API inputs validated at the boundary with Zod, plus indexed database queries matching actual access patterns",
-    ],
-    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
-    github: "https://github.com/panta3/job-application-tracker",
-    demo: "https://job-application-tracker-alpha-lime.vercel.app",
-  },
-  {
-    title: "AWS Cloud Security Posture Scanner",
-    tag: "Cloud Security",
+    title: "Job Posting Watcher",
+    tag: "Cloud & Automation",
     color: "cyan",
     description:
-      "Automated auditing tool that scans AWS accounts against CIS Foundations Benchmark controls, tracks findings through a real lifecycle, and can safely auto-remediate low-risk issues.",
+      "A serverless watcher that reads ~930 employers' hiring systems directly every 15 minutes and pushes new entry-level tech roles in Canada to my phone, often before they reach job boards, with a web app to rank, apply to and track them.",
     bullets: [
-      "5 CIS AWS checks + 4 CIS Kubernetes Benchmark checks, validated live against a real AWS account and cluster",
-      "Serverless pipeline (Lambda + EventBridge + DynamoDB + SNS) via Terraform with opt-in auto-remediation",
-      "CloudWatch dashboard and custom metrics, backed by a least-privilege IAM role scoped per capability",
+      "20+ source adapters (Workday, Greenhouse, Lever, Ashby, Oracle Recruiting Cloud, SAP SuccessFactors, Eightfold and more) scanning ~64,000 postings in under a minute; 741 employers were auto-discovered by mining and live-probing ~4,200 hiring-system links",
+      "Filtering pipeline for English and French titles, Canadian locations (telling Burlington, ON from Burlington, MA), years-of-experience and start-date extraction, cross-feed de-duplication and closed-posting detection, plus resume-fit scoring",
+      "Runs on AWS Lambda, EventBridge Scheduler and S3, provisioned with Terraform and kept at ~$0/month by batching state writes; the same function serves a token-gated web app with an application pipeline and 14-day follow-up reminders",
+      "Validated against live data: fixed a Workday bug where pinned postings hid every new TD job, and a SQLite lock leak that froze scans (transactional writes, WAL mode and a single-run lock)",
     ],
-    stack: ["Python", "boto3", "Terraform", "AWS", "Kubernetes"],
-    github: "https://github.com/panta3/cloud-security-posture-scanner",
-  },
-  {
-    title: "Technical Knowledge RAG Assistant",
-    tag: "AI / ML",
-    color: "violet",
-    description:
-      "RAG pipeline over a multi-domain technical corpus — security frameworks, cloud architecture, and software engineering references — with grounded, citation-backed answers and a measured hallucination rate instead of blind trust in the model's output.",
-    bullets: [
-      "Multi-format ingestion (PDF + text) over 5 real documents — NIST CSF 2.0, OWASP Top 10, AWS Well-Architected Framework, the Twelve-Factor App, and Kubernetes/SemVer reference docs",
-      "GPU-accelerated embeddings + a locally-hosted LLM, quantized (GGUF) for a 37x CPU inference speedup in production",
-      "Structural hallucination guard that rejects generation below an empirically-derived retrieval-confidence threshold",
-      "39-question evaluation harness spanning all 5 documents — 74.3% retrieval precision, 74.3% citation accuracy, 80% keyword recall, 0% hallucination rate",
-    ],
-    stack: ["FastAPI", "PyTorch", "Chroma", "GCP Cloud Run", "Docker"],
-    github: "https://github.com/panta3/security-rag-assistant",
-    demo: "https://security-rag-assistant-x3hib67cua-uc.a.run.app",
+    stack: ["Python", "AWS Lambda", "Terraform", "S3", "SQLite"],
+    github: "https://github.com/panta3/job-watcher",
   },
   {
     title: "PDF Studio",
@@ -211,19 +167,63 @@ export const projects: Project[] = [
     demo: "https://pdf-studio-pearl.vercel.app",
   },
   {
-    title: "Job Posting Watcher",
-    tag: "Cloud & Automation",
+    title: "Technical Knowledge RAG Assistant",
+    tag: "AI / ML",
+    color: "violet",
+    description:
+      "RAG pipeline over a multi-domain technical corpus — security frameworks, cloud architecture, and software engineering references — with grounded, citation-backed answers and a measured hallucination rate instead of blind trust in the model's output.",
+    bullets: [
+      "Multi-format ingestion (PDF + text) over 5 real documents — NIST CSF 2.0, OWASP Top 10, AWS Well-Architected Framework, the Twelve-Factor App, and Kubernetes/SemVer reference docs",
+      "GPU-accelerated embeddings + a locally-hosted LLM, quantized (GGUF) for a 37x CPU inference speedup in production",
+      "Structural hallucination guard that rejects generation below an empirically-derived retrieval-confidence threshold",
+      "39-question evaluation harness spanning all 5 documents — 74.3% retrieval precision, 74.3% citation accuracy, 80% keyword recall, 0% hallucination rate",
+    ],
+    stack: ["FastAPI", "PyTorch", "Chroma", "GCP Cloud Run", "Docker"],
+    github: "https://github.com/panta3/security-rag-assistant",
+    demo: "https://security-rag-assistant-x3hib67cua-uc.a.run.app",
+  },
+  {
+    title: "AWS Cloud Security Posture Scanner",
+    tag: "Cloud Security",
     color: "cyan",
     description:
-      "A serverless watcher that reads ~930 employers' hiring systems directly every 15 minutes and pushes new entry-level tech roles in Canada to my phone, often before they reach job boards, with a web app to rank, apply to and track them.",
+      "Automated auditing tool that scans AWS accounts against CIS Foundations Benchmark controls, tracks findings through a real lifecycle, and can safely auto-remediate low-risk issues.",
     bullets: [
-      "20+ source adapters (Workday, Greenhouse, Lever, Ashby, Oracle Recruiting Cloud, SAP SuccessFactors, Eightfold and more) scanning ~64,000 postings in under a minute; 741 employers were auto-discovered by mining and live-probing ~4,200 hiring-system links",
-      "Filtering pipeline for English and French titles, Canadian locations (telling Burlington, ON from Burlington, MA), years-of-experience and start-date extraction, cross-feed de-duplication and closed-posting detection, plus resume-fit scoring",
-      "Runs on AWS Lambda, EventBridge Scheduler and S3, provisioned with Terraform and kept at ~$0/month by batching state writes; the same function serves a token-gated web app with an application pipeline and 14-day follow-up reminders",
-      "Validated against live data: fixed a Workday bug where pinned postings hid every new TD job, and a SQLite lock leak that froze scans (transactional writes, WAL mode and a single-run lock)",
+      "5 CIS AWS checks + 4 CIS Kubernetes Benchmark checks, validated live against a real AWS account and cluster",
+      "Serverless pipeline (Lambda + EventBridge + DynamoDB + SNS) via Terraform with opt-in auto-remediation",
+      "CloudWatch dashboard and custom metrics, backed by a least-privilege IAM role scoped per capability",
     ],
-    stack: ["Python", "AWS Lambda", "Terraform", "S3", "SQLite"],
-    github: "https://github.com/panta3/job-watcher",
+    stack: ["Python", "boto3", "Terraform", "AWS", "Kubernetes"],
+    github: "https://github.com/panta3/cloud-security-posture-scanner",
+  },
+  {
+    title: "Job Application Tracker",
+    tag: "Full-Stack",
+    color: "amber",
+    description:
+      "A full-stack personal CRM for the job/co-op search — a status pipeline and live funnel stats instead of a spreadsheet.",
+    bullets: [
+      "Status pipeline (Applied → OA → Interview → Offer/Rejected) with a dashboard showing real-time funnel conversion",
+      "Prisma-backed Next.js application with a follow-up reminder system that flags stale applications after 14 days",
+      "All API inputs validated at the boundary with Zod, plus indexed database queries matching actual access patterns",
+    ],
+    stack: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
+    github: "https://github.com/panta3/job-application-tracker",
+    demo: "https://job-application-tracker-alpha-lime.vercel.app",
+  },
+  {
+    title: "Algorithmic Trading Signal Scanner",
+    tag: "Full-Stack",
+    color: "amber",
+    description:
+      "Two independent rule-based scoring engines — an intraday scanner and a swing evaluator — that score live market data against a multi-factor confluence model and log every signal for accuracy tracking, with a full-stack dashboard and real broker integration.",
+    bullets: [
+      "5-min intraday scanner and swing evaluator scoring live data on VWAP, RSI, OBV, relative strength, and order-flow signals, each independently backtested and accuracy-tracked, with push alerts (ntfy) on high-grade setups",
+      "Full-stack Flask + React dashboard with live charting, an Interactive Brokers data/execution layer (ib_insync), and a custom MCP server exposing broker data to AI agents",
+      "Walk-forward backtesting across multiple index universes; used measured live results to permanently disable a losing signal mode (0.06 profit factor) rather than keep it running",
+    ],
+    stack: ["Python", "Flask", "React", "Interactive Brokers API"],
+    github: "https://github.com/panta3/Trade_suggestion",
   },
 ];
 
